@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"xiaokeai666123.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"xiaokeai666123.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="在搭建博客之前，有这么几个考量：  支持 markdown 语法，便于迁移和维护； 尽可能地减少 dependencies，不依赖于任何平台； 只有上面两个条件满足，才能满足第三个条件：不花钱！  那么满足这几个条件的办法，就几乎只有 Github Pages + Hexo 了。 环境准备Node js 在官网安装 node  js 安装完成后，check node 和 npm：  12node">
@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/2.png">
 <meta property="og:image" content="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/3.png">
 <meta property="article:published_time" content="2023-03-19T03:19:43.000Z">
-<meta property="article:modified_time" content="2023-03-19T03:50:08.615Z">
+<meta property="article:modified_time" content="2023-03-19T03:59:14.405Z">
 <meta property="article:author" content="小可爱">
 <meta property="article:tag" content="hexo, next, blog">
 <meta name="twitter:card" content="summary">
@@ -200,7 +200,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 03/18/2023 20:19:43 / Modified: 20:50:08" itemprop="dateCreated datePublished" datetime="2023-03-18T20:19:43-07:00">03/18/2023</time>
+              <time title="Created: 03/18/2023 20:19:43 / Modified: 20:59:14" itemprop="dateCreated datePublished" datetime="2023-03-18T20:19:43-07:00">03/18/2023</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -295,8 +295,9 @@
 <li>三件套<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g  <span class="comment"># generate static files in public</span></span><br><span class="line">hexo s  <span class="comment"># server</span></span><br><span class="line">hexo d  <span class="comment"># deploy to Github</span></span><br></pre></td></tr></table></figure></li>
 <li>情况缓存<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="Troubleshoot"><a href="#Troubleshoot" class="headerlink" title="Troubleshoot"></a>Troubleshoot</h2><h3 id="本地可以运行和编译，但-remote-无法加载静态文件"><a href="#本地可以运行和编译，但-remote-无法加载静态文件" class="headerlink" title="本地可以运行和编译，但 remote 无法加载静态文件"></a>本地可以运行和编译，但 remote 无法加载静态文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ref: [link](https://blog.csdn.net/m0_60930579/article/details/126312041)</span><br></pre></td></tr></table></figure>
-
+<h2 id="Troubleshoot"><a href="#Troubleshoot" class="headerlink" title="Troubleshoot"></a>Troubleshoot</h2><h3 id="本地可以运行和编译，但-remote-无法加载静态文件"><a href="#本地可以运行和编译，但-remote-无法加载静态文件" class="headerlink" title="本地可以运行和编译，但 remote 无法加载静态文件"></a>本地可以运行和编译，但 remote 无法加载静态文件</h3><blockquote>
+<p>ref: <a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_60930579/article/details/126312041">link</a></p>
+</blockquote>
 <ul>
 <li>打开 F12 调试窗口，发现报错：<br><img src="/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/3.png"></li>
 <li>这说明静态文件没有被浏览器找到，parse 路径时出错。</li>
