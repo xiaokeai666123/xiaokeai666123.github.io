@@ -20,30 +20,37 @@
     var CONFIG = {"hostname":"xiaokeai666123.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="随便写写，有感而发。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小可爱的脚印">
-<meta property="og:url" content="https://xiaokeai666123.github.io/index.html">
+  <meta name="description" content="在搭建博客之前，有这么几个考量：  支持 markdown 语法，便于迁移和维护； 尽可能地减少 dependencies，不依赖于任何平台； 只有上面两个条件满足，才能满足第三个条件：不花钱！  那么满足这几个条件的办法，就几乎只有 Github Pages + Hexo 了。 环境准备Node js 在官网安装 node  js 安装完成后，check node 和 npm：  12node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何快速搭建一个独立博客">
+<meta property="og:url" content="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="小可爱的脚印">
-<meta property="og:description" content="随便写写，有感而发。">
+<meta property="og:description" content="在搭建博客之前，有这么几个考量：  支持 markdown 语法，便于迁移和维护； 尽可能地减少 dependencies，不依赖于任何平台； 只有上面两个条件满足，才能满足第三个条件：不花钱！  那么满足这几个条件的办法，就几乎只有 Github Pages + Hexo 了。 环境准备Node js 在官网安装 node  js 安装完成后，check node 和 npm：  12node">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/1.webp">
+<meta property="og:image" content="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/2.png">
+<meta property="og:image" content="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/3.png">
+<meta property="article:published_time" content="2023-03-19T03:19:43.000Z">
+<meta property="article:modified_time" content="2023-03-19T03:50:08.615Z">
 <meta property="article:author" content="小可爱">
+<meta property="article:tag" content="hexo, next, blog">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/1.webp">
 
-<link rel="canonical" href="https://xiaokeai666123.github.io/">
+<link rel="canonical" href="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>小可爱的脚印</title>
+  <title>如何快速搭建一个独立博客 | 小可爱的脚印</title>
   
 
 
@@ -162,9 +169,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -180,10 +188,9 @@
       <meta itemprop="name" content="小可爱的脚印">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">如何快速搭建一个独立博客</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          如何快速搭建一个独立博客
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -216,7 +223,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/1.webp"></p>
+        <p><img src="/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/1.webp"></p>
 <p>在搭建博客之前，有这么几个考量：</p>
 <ul>
 <li>支持 markdown 语法，便于迁移和维护；</li>
@@ -296,98 +303,52 @@
 <li>检查 hexo config 的 url 和 root，正确的配置应该是：<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://xiaokeai666123.github.io</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
-      
     </div>
 
     
     
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+        
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://xiaokeai666123.github.io/2023/03/17/Hello-World/">
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="小可爱">
-      <meta itemprop="description" content="随便写写，有感而发。">
-    </span>
+    <div class="social-list">
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小可爱的脚印">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/17/Hello-World/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 03/17/2023 23:12:45" itemprop="dateCreated datePublished" datetime="2023-03-17T23:12:45-07:00">03/17/2023</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 03/18/2023 18:16:29" itemprop="dateModified" datetime="2023-03-18T18:16:29-07:00">03/18/2023</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/misc/" itemprop="url" rel="index"><span itemprop="name">misc</span></a>
-                </span>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
             </span>
 
-          
-
+            <span class="label">RSS</span>
+          </a>
         </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/2023/03/17/Hello-World/1.png"></p>
-<p>写作是一个梳理想法，构建价值观的过程。一直有动笔表达的冲动，但因为各种原因迟迟没有开始。</p>
-<p>搭建一个独立博客显而易见的原因，是在中文互联网环境已经很难找到一个不受阉割和关键词屏蔽的角落。另外我也想在这里践行 <a target="_blank" rel="noopener" href="https://notes.nicolevanderhoeven.com/Learning+in+public">learn in public</a> 的想法，分享一些我的思考和学习。</p>
-<p>我们下一篇见。</p>
-
-      
     </div>
+  </div>
 
-    
-    
-    
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/tags/hexo-next-blog/" rel="tag"># hexo, next, blog</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/03/17/Hello-World/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -440,6 +401,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-js"><span class="nav-number">1.1.</span> <span class="nav-text">Node js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github-repo"><span class="nav-number">1.2.</span> <span class="nav-text">Github repo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo"><span class="nav-number">2.</span> <span class="nav-text">Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Hexo-CLI"><span class="nav-number">2.1.</span> <span class="nav-text">安装 Hexo CLI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-Hexo-repo"><span class="nav-number">2.2.</span> <span class="nav-text">创建 Hexo repo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5-Github%EF%BC%8C%E7%94%A8%E4%BA%8E%E6%97%A5%E5%90%8E%E7%9A%84-deploy"><span class="nav-number">2.3.</span> <span class="nav-text">连接 Github，用于日后的 deploy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-Hexo-deploy"><span class="nav-number">3.</span> <span class="nav-text">配置 Hexo deploy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NEXT-theme"><span class="nav-number">4.</span> <span class="nav-text">NEXT theme</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-NEXT"><span class="nav-number">4.1.</span> <span class="nav-text">安装 NEXT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-NEXT"><span class="nav-number">4.2.</span> <span class="nav-text">配置 NEXT</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-%E5%B8%B8%E8%A7%81-Commands"><span class="nav-number">5.</span> <span class="nav-text">Hexo 常见 Commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshoot"><span class="nav-number">6.</span> <span class="nav-text">Troubleshoot</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%8F%AF%E4%BB%A5%E8%BF%90%E8%A1%8C%E5%92%8C%E7%BC%96%E8%AF%91%EF%BC%8C%E4%BD%86-remote-%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6"><span class="nav-number">6.1.</span> <span class="nav-text">本地可以运行和编译，但 remote 无法加载静态文件</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
