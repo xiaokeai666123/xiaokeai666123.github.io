@@ -6,7 +6,7 @@
   <link href="https://xiaokeai666123.github.io/atom.xml" rel="self"/>
   
   <link href="https://xiaokeai666123.github.io/"/>
-  <updated>2023-03-19T06:35:01.390Z</updated>
+  <updated>2023-03-19T08:51:43.963Z</updated>
   <id>https://xiaokeai666123.github.io/</id>
   
   <author>
@@ -21,16 +21,17 @@
     <link href="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/"/>
     <id>https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/</id>
     <published>2023-03-19T03:19:43.000Z</published>
-    <updated>2023-03-19T06:35:01.390Z</updated>
+    <updated>2023-03-19T08:51:43.963Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;img</summary>
-        
-      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/1.webp&quot;&gt;&lt;/p&gt;
+&lt;p&gt;在搭建博客之前，有这么几个考量：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持 markdown 语法，便于迁移和维护；&lt;/li&gt;
+&lt;li&gt;尽可能地减少 dependencies，不依赖于任何平台；&lt;/li&gt;
+&lt;li&gt;只有上面两个条件满足，才能满足第三个条件：&lt;strong&gt;不花钱&lt;/strong&gt;！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;那么满足这几个条件的办法，就几乎只有 &lt;code&gt;Github Pages&lt;/code&gt; + &lt;code&gt;Hexo&lt;/code&gt; 了。&lt;/p&gt;</summary>
     
     
     
