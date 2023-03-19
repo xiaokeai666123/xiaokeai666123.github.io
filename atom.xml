@@ -6,7 +6,7 @@
   <link href="https://xiaokeai666123.github.io/atom.xml" rel="self"/>
   
   <link href="https://xiaokeai666123.github.io/"/>
-  <updated>2023-03-19T03:59:14.405Z</updated>
+  <updated>2023-03-19T06:13:50.700Z</updated>
   <id>https://xiaokeai666123.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/"/>
     <id>https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/</id>
     <published>2023-03-19T03:19:43.000Z</published>
-    <updated>2023-03-19T03:59:14.405Z</updated>
+    <updated>2023-03-19T06:13:50.700Z</updated>
     
     
       
@@ -37,7 +37,11 @@
     <category term="tech" scheme="https://xiaokeai666123.github.io/categories/tech/"/>
     
     
-    <category term="hexo, next, blog" scheme="https://xiaokeai666123.github.io/tags/hexo-next-blog/"/>
+    <category term="hexo" scheme="https://xiaokeai666123.github.io/tags/hexo/"/>
+    
+    <category term="next" scheme="https://xiaokeai666123.github.io/tags/next/"/>
+    
+    <category term="blog" scheme="https://xiaokeai666123.github.io/tags/blog/"/>
     
   </entry>
   
@@ -46,7 +50,7 @@
     <link href="https://xiaokeai666123.github.io/2023/03/17/Hello-World/"/>
     <id>https://xiaokeai666123.github.io/2023/03/17/Hello-World/</id>
     <published>2023-03-18T06:12:45.000Z</published>
-    <updated>2023-03-19T01:16:29.466Z</updated>
+    <updated>2023-03-19T04:05:40.925Z</updated>
     
     
       
@@ -61,6 +65,8 @@
     
     <category term="misc" scheme="https://xiaokeai666123.github.io/categories/misc/"/>
     
+    
+    <category term="other" scheme="https://xiaokeai666123.github.io/tags/other/"/>
     
   </entry>
   
