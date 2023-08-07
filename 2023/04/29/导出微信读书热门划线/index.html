@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xiaokeai666123.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="微信读书虽然书目有限，但它的优点也是显而易见的：  多端同步 iOS 端最优秀的中文 tts（text-to-speech 文字转语音）  基于这两点，我经常用它来读一些“不需要动脑子”的书。有些时候，甚至是直接把书传进来，然后用它自带的 tts 听书。 但有一个痛点是，这些“不需要动脑子”的书很多是在我做运动或者带娃的时候读（听）的，所以很难在同一时间做笔记，甚至连划线都做不到。 后来我想到">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一键导出微信读书热门划线">
+<meta property="og:url" content="https://xiaokeai666123.github.io/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/index.html">
+<meta property="og:site_name" content="小可爱的脚印">
+<meta property="og:description" content="微信读书虽然书目有限，但它的优点也是显而易见的：  多端同步 iOS 端最优秀的中文 tts（text-to-speech 文字转语音）  基于这两点，我经常用它来读一些“不需要动脑子”的书。有些时候，甚至是直接把书传进来，然后用它自带的 tts 听书。 但有一个痛点是，这些“不需要动脑子”的书很多是在我做运动或者带娃的时候读（听）的，所以很难在同一时间做笔记，甚至连划线都做不到。 后来我想到">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://xiaokeai666123.github.io/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/header.png">
+<meta property="og:image" content="https://xiaokeai666123.github.io/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/4.png">
+<meta property="og:image" content="https://xiaokeai666123.github.io/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/5.png">
+<meta property="og:image" content="https://xiaokeai666123.github.io/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/1.png">
+<meta property="og:image" content="https://xiaokeai666123.github.io/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/2.png">
+<meta property="og:image" content="https://xiaokeai666123.github.io/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/3.png">
+<meta property="og:image" content="https://xiaokeai666123.github.io/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/4.png">
+<meta property="og:image" content="https://xiaokeai666123.github.io/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/5.png">
+<meta property="og:image" content="https://xiaokeai666123.github.io/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/6.png">
+<meta property="article:published_time" content="2023-04-30T04:48:25.000Z">
+<meta property="article:modified_time" content="2023-08-07T07:44:50.561Z">
+<meta property="article:author" content="小可爱">
+<meta property="article:tag" content="微信读书">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xiaokeai666123.github.io/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/header.png">
+
+
+<link rel="canonical" href="https://xiaokeai666123.github.io/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://xiaokeai666123.github.io/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/","path":"2023/04/29/导出微信读书热门划线/","title":"一键导出微信读书热门划线"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>一键导出微信读书热门划线 | 小可爱的脚印</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="小可爱的脚印" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">小可爱的脚印</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%BE%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text"> 难点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84-endpointsapi"><span class="nav-number">2.</span> <span class="nav-text"> 微信读书移动端的 endpoints&#x2F;API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.1.</span> <span class="nav-text"> 登录接口：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%9B%BE%E4%B9%A6%E7%AB%A0%E8%8A%82%E4%BF%A1%E6%81%AF"><span class="nav-number">2.2.</span> <span class="nav-text"> 获取图书章节信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%9B%BE%E4%B9%A6%E7%9A%84%E7%83%AD%E9%97%A8%E6%A0%87%E6%B3%A8"><span class="nav-number">2.3.</span> <span class="nav-text"> 获取图书的热门标注</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%BF%E5%88%B0-cookies"><span class="nav-number">3.</span> <span class="nav-text"> 拿到 cookies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%8B%BF%E5%88%B0%E4%BB%98%E8%B4%B9%E5%9B%BE%E4%B9%A6%E7%9A%84-bookid"><span class="nav-number">4.</span> <span class="nav-text"> 如何拿到付费图书的 bookID</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%93%E5%8F%96%E7%83%AD%E9%97%A8%E6%A0%87%E8%AE%B0"><span class="nav-number">5.</span> <span class="nav-text"> 抓取热门标记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#prepare-headers"><span class="nav-number">5.1.</span> <span class="nav-text"> prepare headers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%93%E5%8F%96%E7%AB%A0%E8%8A%82%E4%BF%A1%E6%81%AF"><span class="nav-number">5.2.</span> <span class="nav-text"> 抓取章节信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%93%E5%8F%96%E7%83%AD%E9%97%A8%E6%A0%87%E8%AE%B0-2"><span class="nav-number">5.3.</span> <span class="nav-text"> 抓取热门标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#parse-cookies"><span class="nav-number">5.4.</span> <span class="nav-text"> parse cookies</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90-markdown-%E6%A0%BC%E5%BC%8F%E5%AF%BC%E5%85%A5%E7%AC%94%E8%AE%B0"><span class="nav-number">6.</span> <span class="nav-text"> 生成 markdown 格式，导入笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD%E6%94%B9%E8%BF%9B"><span class="nav-number">7.</span> <span class="nav-text"> 后续改进</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">小可爱</p>
+  <div class="site-description" itemprop="description">随便写写，有感而发。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xiaokeai666123.github.io/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小可爱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小可爱的脚印">
+      <meta itemprop="description" content="随便写写，有感而发。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="一键导出微信读书热门划线 | 小可爱的脚印">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          一键导出微信读书热门划线
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 04/29/2023 21:48:25" itemprop="dateCreated datePublished" datetime="2023-04-29T21:48:25-07:00">04/29/2023</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 08/07/2023 00:44:50" itemprop="dateModified" datetime="2023-08-07T00:44:50-07:00">08/07/2023</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">tech</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><img src="/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/header.png" class=""> 
+<p>微信读书虽然书目有限，但它的优点也是显而易见的：</p>
+<ul>
+<li>多端同步</li>
+<li>iOS 端最优秀的中文 tts（text-to-speech 文字转语音）</li>
+</ul>
+<p>基于这两点，我经常用它来读一些“不需要动脑子”的书。有些时候，甚至是直接把书传进来，然后用它自带的 tts 听书。</p>
+<p>但有一个痛点是，这些“不需要动脑子”的书很多是在我做运动或者带娃的时候读（听）的，所以很难在同一时间做笔记，甚至连划线都做不到。</p>
+<p>后来我想到一个办法：用其他读者的“热门划线”来作为这本书的 summary。这当然是一个折中的办法，hit 到其他人的 points，并不一定会和我产生共鸣；对我有所触动的 points 可能也并不在热门划线之列。但是这些书是“不需要动脑子”的，所以并不需要精读和深入思考，何况经过大多数人的 vote，这些片段应该也足以概括它的精华。</p>
+<p>于是，在周五的晚上，趁娃睡着之后，我琢磨了一下如何自动化实现。</p>
+<p>先看一下生成后的效果吧：</p>
+<img src="/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/4.png" class=""> 
+<img src="/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/5.png" class=""> 
+<span id="more"></span>
+<h2 id="难点"><a class="markdownIt-Anchor" href="#难点"></a> 难点</h2>
+<ul>
+<li>微信读书的热门划线只可以在移动端浏览，也就是说，在 web 端不能直接得到 response</li>
+<li>有些图书是付费图书，无法直接拿到这些书的 <code>bookID</code>，也就无法在 web 端 query 这些书的热门划线</li>
+</ul>
+<h2 id="微信读书移动端的-endpointsapi"><a class="markdownIt-Anchor" href="#微信读书移动端的-endpointsapi"></a> 微信读书移动端的 endpoints/API</h2>
+<p>因为前述的原因，我们需要分析微信读书移动端现有的 query pattern，找到它对应的 API。</p>
+<p>简单搜索了一下，发现已经有前人进行过一些<a target="_blank" rel="noopener" href="https://blog.csdn.net/mighty13/article/details/119257353">探索</a>。我主要需要的一些 endpoints：</p>
+<h3 id="登录接口"><a class="markdownIt-Anchor" href="#登录接口"></a> 登录接口：</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://i.weread.qq.com/user/notebooks</span><br></pre></td></tr></table></figure>
+<p>直接在 terminal 访问会报错：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl https://i.weread.qq.com/user/notebooks</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">&quot;errcode&quot;</span>:-2010,<span class="string">&quot;errlog&quot;</span>:<span class="string">&quot;C0M53jv&quot;</span>,<span class="string">&quot;errmsg&quot;</span>:<span class="string">&quot;用户不存在&quot;</span>&#125;%</span><br></pre></td></tr></table></figure>
+<p>因为微信会检查你是否有 valid cookie，所以我们后面也需要加一个 cookie 在 query 来访问这些 endpoints。</p>
+<p>可以在 web browser 先验证登录，然后访问这个 endpoint，就会得到一个 json response：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;synckey&quot;</span><span class="punctuation">:</span><span class="number">1682756849</span><span class="punctuation">,</span><span class="attr">&quot;totalBookCount&quot;</span><span class="punctuation">:</span><span class="number">16</span><span class="punctuation">,</span><span class="attr">&quot;noBookReviewCount&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;books&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;bookId&quot;</span><span class="punctuation">:</span><span class="string">&quot;CB_3PZ9fh9iD2sR6fn6gmGY0EZy&quot;</span><span class="punctuation">,</span><span class="attr">&quot;book&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span><span class="attr">&quot;bookId&quot;</span><span class="punctuation">:</span><span class="string">&quot;CB_3PZ9fh9iD2sR6fn6gmGY0EZy&quot;</span><span class="punctuation">,</span><span class="attr">&quot;title&quot;</span><span class="punctuation">:</span><span class="string">&quot;黑天鹅——如何应对不可预知的未来&quot;</span><span class="punctuation">,</span><span class="attr">&quot;author&quot;</span><span class="punctuation">:</span><span class="string">&quot;纳西姆·尼古拉斯·塔勒布(Nassim Nicholas Taleb)&quot;</span><span class="punctuation">,</span><span class="attr">&quot;cover&quot;</span><span class="punctuation">:</span><span class="string">&quot;https://res.weread.qq.com/wrepub/CB_3PZ9fh9iD2sR6fn6gmGY0EZy_parsecover&quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="number">959556284</span><span class="punctuation">,</span><span class="attr">&quot;format&quot;</span><span class="punctuation">:</span><span class="string">&quot;epub&quot;</span><span class="punctuation">,</span><span class="attr">&quot;type&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;price&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;originalPrice&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;soldout&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;bookStatus&quot;</span><span class="punctuation">:</span><span class="number">1</span><span class="punctuation">,</span><span class="attr">&quot;payType&quot;</span><span class="punctuation">:</span><span class="number">33</span><span class="punctuation">,</span><span class="attr">&quot;centPrice&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;finished&quot;</span><span class="punctuation">:</span><span class="number">1</span><span class="punctuation">,</span><span class="attr">&quot;maxFreeChapter&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;free&quot;</span><span class="punctuation">:</span><span class="number">1</span><span class="punctuation">,</span><span class="attr">&quot;mcardDiscount&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;ispub&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;cpid&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;publishTime&quot;</span><span class="punctuation">:</span><span class="string">&quot;&quot;</span><span class="punctuation">,</span><span class="attr">&quot;centPrice&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;hasLecture&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;lastChapterIdx&quot;</span><span class="punctuation">:</span><span class="number">32</span><span class="punctuation">,</span><span class="attr">&quot;paperBook&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span><span class="attr">&quot;skuId&quot;</span><span class="punctuation">:</span><span class="string">&quot;&quot;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="attr">&quot;limitShareChat&quot;</span><span class="punctuation">:</span><span class="number">1</span><span class="punctuation">,</span><span class="attr">&quot;blockSaveImg&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;language&quot;</span><span class="punctuation">:</span><span class="string">&quot;zh&quot;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="attr">&quot;reviewCount&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;reviewLikeCount&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;reviewCommentCount&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;noteCount&quot;</span><span class="punctuation">:</span><span class="number">2</span><span class="punctuation">,</span><span class="attr">&quot;bookmarkCount&quot;</span><span class="punctuation">:</span><span class="number">13</span><span class="punctuation">,</span><span class="attr">&quot;sort&quot;</span><span class="punctuation">:</span><span class="number">1682616454</span><span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="punctuation">&#123;</span><span class="attr">&quot;bookId&quot;</span><span class="punctuation">:</span><span class="string">&quot;42835975&quot;</span><span class="punctuation">,</span><span class="attr">&quot;book&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span><span class="attr">&quot;bookId&quot;</span><span class="punctuation">:</span><span class="string">&quot;42835975&quot;</span><span class="punctuation">,</span><span class="attr">&quot;title&quot;</span><span class="punctuation">:</span><span class="string">&quot;天才假象：从刻意练习、心理策略到认知陷阱&quot;</span><span class="punctuation">,</span><span class="attr">&quot;author&quot;</span><span class="punctuation">:</span><span class="string">&quot;马修·萨伊德&quot;</span><span class="punctuation">,</span><span class="attr">&quot;translator&quot;</span><span class="punctuation">:</span><span class="string">&quot;金玉璨&quot;</span><span class="punctuation">,</span><span class="attr">&quot;cover&quot;</span><span class="punctuation">:</span><span class="string">&quot;https://weread-1258476243.file.myqcloud.com/weread/cover/19/YueWen_42835975/s_YueWen_42835975.jpg&quot;</span><span class="punctuation">,</span><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span><span class="number">100422609</span><span class="punctuation">,</span><span class="attr">&quot;format&quot;</span><span class="punctuation">:</span><span class="string">&quot;epub&quot;</span><span class="punctuation">,</span><span class="attr">&quot;type&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;price&quot;</span><span class="punctuation">:</span><span class="number">25.2</span><span class="punctuation">,</span><span class="attr">&quot;originalPrice&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;soldout&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;bookStatus&quot;</span><span class="punctuation">:</span><span class="number">1</span><span class="punctuation">,</span><span class="attr">&quot;payType&quot;</span><span class="punctuation">:</span><span class="number">4097</span><span class="punctuation">,</span><span class="attr">&quot;centPrice&quot;</span><span class="punctuation">:</span><span class="number">2520</span><span class="punctuation">,</span><span class="attr">&quot;finished&quot;</span><span class="punctuation">:</span><span class="number">1</span><span class="punctuation">,</span><span class="attr">&quot;maxFreeChapter&quot;</span><span class="punctuation">:</span><span class="number">9</span><span class="punctuation">,</span><span class="attr">&quot;free&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;mcardDiscount&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;ispub&quot;</span><span class="punctuation">:</span><span class="number">1</span><span class="punctuation">,</span><span class="attr">&quot;extra_type&quot;</span><span class="punctuation">:</span><span class="number">5</span><span class="punctuation">,</span><span class="attr">&quot;cpid&quot;</span><span class="punctuation">:</span><span class="number">9555120</span><span class="punctuation">,</span><span class="attr">&quot;publishTime&quot;</span><span class="punctuation">:</span><span class="string">&quot;2018-03-01 00:00:00&quot;</span><span class="punctuation">,</span><span class="attr">&quot;centPrice&quot;</span><span class="punctuation">:</span><span class="number">2520</span><span class="punctuation">,</span><span class="attr">&quot;categories&quot;</span><span class="punctuation">:</span><span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;categoryId&quot;</span><span class="punctuation">:</span><span class="number">1000000</span><span class="punctuation">,</span><span class="attr">&quot;subCategoryId&quot;</span><span class="punctuation">:</span><span class="number">1000004</span><span class="punctuation">,</span><span class="attr">&quot;categoryType&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;title&quot;</span><span class="punctuation">:</span><span class="string">&quot;个人成长-人生哲学&quot;</span><span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">,</span><span class="attr">&quot;hasLecture&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;lastChapterIdx&quot;</span><span class="punctuation">:</span><span class="number">56</span><span class="punctuation">,</span><span class="attr">&quot;paperBook&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span><span class="attr">&quot;skuId&quot;</span><span class="punctuation">:</span><span class="string">&quot;12300525&quot;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="attr">&quot;blockSaveImg&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;language&quot;</span><span class="punctuation">:</span><span class="string">&quot;zh&quot;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="attr">&quot;reviewCount&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;reviewLikeCount&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;reviewCommentCount&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;noteCount&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">&quot;bookmarkCount&quot;</span><span class="punctuation">:</span><span class="number">11</span><span class="punctuation">,</span><span class="attr">&quot;sort&quot;</span><span class="punctuation">:</span><span class="number">1681368932</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line"> ....</span><br></pre></td></tr></table></figure>
+<p>从这里可以看出：</p>
+<ul>
+<li>微信读书里的书有 valid bookID，比如：<code>&quot;bookId&quot;:&quot;42835975&quot;</code></li>
+<li>而自己导入的书，它的 <code>bookID</code> 是以 <code>CB</code> 开头的，比如：<code>&quot;bookId&quot;:&quot;CB_3PZ9fh9iD2sR6fn6gmGY0EZy&quot;</code></li>
+</ul>
+<h3 id="获取图书章节信息"><a class="markdownIt-Anchor" href="#获取图书章节信息"></a> 获取图书章节信息</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://i.weread.qq.com/book/chapterInfos?&quot; + &quot;bookIds=&quot; + bookId + &quot;&amp;synckeys=0</span><br></pre></td></tr></table></figure>
+<h3 id="获取图书的热门标注"><a class="markdownIt-Anchor" href="#获取图书的热门标注"></a> 获取图书的热门标注</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://i.weread.qq.com/book/bestbookmarks?bookId=&quot; + bookId</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这里也会得到一个 json response，但它的标注是乱序的，我们需要通过查看章节信息来归类</li>
+</ul>
+<h2 id="拿到-cookies"><a class="markdownIt-Anchor" href="#拿到-cookies"></a> 拿到 cookies</h2>
+<p>有很多方法可以拿到 cookies，最简单的是用 chrome 的开发者工具：</p>
+<ul>
+<li>Doc -&gt; <a target="_blank" rel="noopener" href="http://weread.qq.com">weread.qq.com</a></li>
+<li>request headers 找到 cookies</li>
+</ul>
+<img src="/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/1.png" class=""> 
+<img src="/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/2.png" class=""> 
+<h2 id="如何拿到付费图书的-bookid"><a class="markdownIt-Anchor" href="#如何拿到付费图书的-bookid"></a> 如何拿到付费图书的 bookID</h2>
+<p>有一种办法可以拿到微信付费图书的 bookID。</p>
+<p>首先找到这本付费图书，然后在移动端打开并查看它的热门划线；</p>
+<p>然后点开任意一条热门划线，就能浏览它的上下文；</p>
+<p>此时，微信读书会进行一个 5min 的倒计时，限制你查看这本付费图书的全部内容。但在这个时间段，你去 query 登录接口，就可以得到这本书的 bookID 了！</p>
+<img src="/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/3.png" class=""> 
+<h2 id="抓取热门标记"><a class="markdownIt-Anchor" href="#抓取热门标记"></a> 抓取热门标记</h2>
+<p>python 比较方便，两个 function 就可以实现这个功能。</p>
+<h3 id="prepare-headers"><a class="markdownIt-Anchor" href="#prepare-headers"></a> prepare headers</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">headers = <span class="string">&quot;&quot;&quot;  </span></span><br><span class="line"><span class="string">Host: i.weread.qq.com  </span></span><br><span class="line"><span class="string">Connection: keep-alive  </span></span><br><span class="line"><span class="string">Upgrade-Insecure-Requests: 1  </span></span><br><span class="line"><span class="string">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36  </span></span><br><span class="line"><span class="string">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7  </span></span><br><span class="line"><span class="string">Accept-Encoding: gzip, deflate, br  </span></span><br><span class="line"><span class="string">Accept-Language: zh-CN,zh;q=0.9,en;q=0.8  </span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span>  </span><br><span class="line">headers = <span class="built_in">dict</span>(x.split(<span class="string">&quot;: &quot;</span>, <span class="number">1</span>) <span class="keyword">for</span> x <span class="keyword">in</span> headers.splitlines() <span class="keyword">if</span> x)</span><br></pre></td></tr></table></figure>
+<h3 id="抓取章节信息"><a class="markdownIt-Anchor" href="#抓取章节信息"></a> 抓取章节信息</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_chapters</span>(<span class="params">bookId, cookies</span>):  </span><br><span class="line">    <span class="string">&quot;&quot;&quot;获取书的目录&quot;&quot;&quot;</span>  </span><br><span class="line">    url = <span class="string">&quot;https://i.weread.qq.com/book/chapterInfos&quot;</span>  </span><br><span class="line">    data = <span class="string">&#x27;&#123;&quot;bookIds&quot;:[&quot;%d&quot;],&quot;synckeys&quot;:[0]&#125;&#x27;</span> % bookId  </span><br><span class="line">  </span><br><span class="line">    parsedCookies = parse_cookie(cookies)  </span><br><span class="line">  </span><br><span class="line">    r = requests.post(url, data=data, headers=headers, cookies=parsedCookies, verify=<span class="literal">False</span>)  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">if</span> r.ok:  </span><br><span class="line">        data = r.json()  </span><br><span class="line">        <span class="comment"># clipboard.copy(json.dumps(data, indent=4, sort_keys=True))  </span></span><br><span class="line">    <span class="keyword">else</span>:  </span><br><span class="line">        <span class="keyword">raise</span> Exception(r.text)  </span><br><span class="line">  </span><br><span class="line">    chapters = []  </span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> data[<span class="string">&quot;data&quot;</span>][<span class="number">0</span>][<span class="string">&quot;updated&quot;</span>]:  </span><br><span class="line">        <span class="keyword">if</span> <span class="string">&quot;anchors&quot;</span> <span class="keyword">in</span> item:  </span><br><span class="line">            chapters.append((item.get(<span class="string">&quot;level&quot;</span>, <span class="number">1</span>), item[<span class="string">&quot;title&quot;</span>]))  </span><br><span class="line">            <span class="keyword">for</span> ac <span class="keyword">in</span> item[<span class="string">&quot;anchors&quot;</span>]:  </span><br><span class="line">                chapters.append((ac[<span class="string">&quot;level&quot;</span>], ac[<span class="string">&quot;title&quot;</span>]))  </span><br><span class="line">  </span><br><span class="line">        <span class="keyword">elif</span> <span class="string">&quot;level&quot;</span> <span class="keyword">in</span> item:  </span><br><span class="line">            chapters.append((item.get(<span class="string">&quot;level&quot;</span>, <span class="number">1</span>), item[<span class="string">&quot;title&quot;</span>]))  </span><br><span class="line">  </span><br><span class="line">        <span class="keyword">else</span>:  </span><br><span class="line">            chapters.append((<span class="number">1</span>, item[<span class="string">&quot;title&quot;</span>]))  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> chapters</span><br></pre></td></tr></table></figure>
+<h3 id="抓取热门标记-2"><a class="markdownIt-Anchor" href="#抓取热门标记-2"></a> 抓取热门标记</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_bestbookmarks</span>(<span class="params">bookId, cookies</span>):  </span><br><span class="line">    <span class="string">&quot;&quot;&quot;获取书籍的热门划线,返回文本&quot;&quot;&quot;</span>  </span><br><span class="line">    url = <span class="string">&quot;https://i.weread.qq.com/book/bestbookmarks&quot;</span>  </span><br><span class="line">    params = <span class="built_in">dict</span>(bookId=bookId)  </span><br><span class="line">  </span><br><span class="line">    parsedCookies = parse_cookie(cookies)  </span><br><span class="line">  </span><br><span class="line">    r = requests.get(url, params=params, headers=headers, cookies=parsedCookies, verify=<span class="literal">False</span>)  </span><br><span class="line">    <span class="keyword">if</span> r.ok:  </span><br><span class="line">        data = r.json()  </span><br><span class="line">    <span class="keyword">else</span>:  </span><br><span class="line">        <span class="keyword">raise</span> Exception(r.text)  </span><br><span class="line">    chapters = &#123;c[<span class="string">&quot;chapterUid&quot;</span>]: c[<span class="string">&quot;title&quot;</span>] <span class="keyword">for</span> c <span class="keyword">in</span> data[<span class="string">&quot;chapters&quot;</span>]&#125;  </span><br><span class="line">    contents = defaultdict(<span class="built_in">list</span>)  </span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> data[<span class="string">&quot;items&quot;</span>]:  </span><br><span class="line">        chapter = item[<span class="string">&quot;chapterUid&quot;</span>]  </span><br><span class="line">        text = item[<span class="string">&quot;markText&quot;</span>]  </span><br><span class="line">        contents[chapter].append(text)  </span><br><span class="line">  </span><br><span class="line">    chapters_map = &#123;title: level <span class="keyword">for</span> level, title <span class="keyword">in</span> get_chapters(<span class="built_in">int</span>(bookId), cookies)&#125;  </span><br><span class="line">    res = <span class="string">&quot;&quot;</span>  </span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> chapters:  </span><br><span class="line">        title = chapters[c]  </span><br><span class="line">        res += <span class="string">&quot;#&quot;</span> * chapters_map[title] + <span class="string">&quot; &quot;</span> + title + <span class="string">&quot;\n&quot;</span>  </span><br><span class="line">        <span class="keyword">for</span> text <span class="keyword">in</span> contents[c]:  </span><br><span class="line">            res += <span class="string">&quot;- &quot;</span> + text.strip() + <span class="string">&quot;\n\n&quot;</span>  </span><br><span class="line">        res += <span class="string">&quot;\n&quot;</span>  </span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<h3 id="parse-cookies"><a class="markdownIt-Anchor" href="#parse-cookies"></a> parse cookies</h3>
+<ul>
+<li>python 需要把 cookies parse 成字典格式</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">parse_cookie</span>(<span class="params">cookies</span>):  </span><br><span class="line">    items = cookies.split(<span class="string">&quot;; &quot;</span>)  </span><br><span class="line">    <span class="built_in">print</span>(items)  </span><br><span class="line">    dict_obj = &#123;&#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items:  </span><br><span class="line">        kv = item.split(<span class="string">&quot;=&quot;</span>, <span class="number">1</span>)  </span><br><span class="line">        k = kv[<span class="number">0</span>].strip()  </span><br><span class="line">        v = kv[<span class="number">1</span>].strip()  </span><br><span class="line">        dict_obj[k] = v  </span><br><span class="line">    <span class="built_in">print</span>(dict_obj)  </span><br><span class="line">    <span class="keyword">return</span> dict_obj</span><br></pre></td></tr></table></figure>
+<h2 id="生成-markdown-格式导入笔记"><a class="markdownIt-Anchor" href="#生成-markdown-格式导入笔记"></a> 生成 markdown 格式，导入笔记</h2>
+<p>上述生成的笔记是按照章节分类，并依照热度排序，来看一下生成的所有热门划线的笔记吧：</p>
+<img src="/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/4.png" class=""> 
+<img src="/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/5.png" class=""> 
+<p>思维导图：</p>
+<img src="/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/6.png" class=""> 
+<h2 id="后续改进"><a class="markdownIt-Anchor" href="#后续改进"></a> 后续改进</h2>
+<p>因为这只是周五晚上娃睡着之后的初步探索，后续应该有很多可以 improve 的地方：</p>
+<ul>
+<li>扫码登录：这样就不需要手动 fetch cookies</li>
+<li>合并热门划线和自己的划线，并去重</li>
+<li>加一个 ui<br />
+...</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6/" rel="tag"># 微信读书</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/03/24/%E5%AD%A6%E4%B9%A0%E7%A9%B6%E7%AB%9F%E6%98%AF%E5%9C%A8%E5%AD%A6%E4%BB%80%E4%B9%88/" rel="prev" title="学习究竟是在学什么">
+                  <i class="fa fa-angle-left"></i> 学习究竟是在学什么
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/05/01/Getting-Things-Done-%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/" rel="next" title="Getting Things Done - 时间管理">
+                  Getting Things Done - 时间管理 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">小可爱</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

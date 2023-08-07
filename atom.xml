@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>小可爱的脚印</title>
+  <icon>https://xiaokeai666123.github.io/icon.png</icon>
+  
+  <link href="https://xiaokeai666123.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://xiaokeai666123.github.io/"/>
+  <updated>2023-08-07T07:44:50.551Z</updated>
+  <id>https://xiaokeai666123.github.io/</id>
+  
+  <author>
+    <name>小可爱</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Getting Things Done - 时间管理</title>
+    <link href="https://xiaokeai666123.github.io/2023/05/01/Getting-Things-Done-%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"/>
+    <id>https://xiaokeai666123.github.io/2023/05/01/Getting-Things-Done-%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/</id>
+    <published>2023-05-02T05:28:59.000Z</published>
+    <updated>2023-08-07T07:44:50.551Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2023/05/01/Getting-Things-Done-%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/3.png&quot; class=&quot;&quot;&gt;
+&lt;p&gt;前段时间读了几本时间管理的书。我最大的感受是，时间管理不是在一定的时间内做什么，而是&lt;strong&gt;不做什么&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;在尝试了一段时间后，我试着把我觉得能提高效率的方法都罗列出来。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="skills" scheme="https://xiaokeai666123.github.io/categories/skills/"/>
+    
+    
+    <category term="GTD" scheme="https://xiaokeai666123.github.io/tags/GTD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一键导出微信读书热门划线</title>
+    <link href="https://xiaokeai666123.github.io/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/"/>
+    <id>https://xiaokeai666123.github.io/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/</id>
+    <published>2023-04-30T04:48:25.000Z</published>
+    <updated>2023-08-07T07:44:50.561Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/header.png&quot; class=&quot;&quot;&gt; 
+&lt;p&gt;微信读书虽然书目有限，但它的优点也是显而易见的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;多端同步&lt;/li&gt;
+&lt;li&gt;iOS 端最优秀的中文 tts（text-to-speech 文字转语音）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;基于这两点，我经常用它来读一些“不需要动脑子”的书。有些时候，甚至是直接把书传进来，然后用它自带的 tts 听书。&lt;/p&gt;
+&lt;p&gt;但有一个痛点是，这些“不需要动脑子”的书很多是在我做运动或者带娃的时候读（听）的，所以很难在同一时间做笔记，甚至连划线都做不到。&lt;/p&gt;
+&lt;p&gt;后来我想到一个办法：用其他读者的“热门划线”来作为这本书的 summary。这当然是一个折中的办法，hit 到其他人的 points，并不一定会和我产生共鸣；对我有所触动的 points 可能也并不在热门划线之列。但是这些书是“不需要动脑子”的，所以并不需要精读和深入思考，何况经过大多数人的 vote，这些片段应该也足以概括它的精华。&lt;/p&gt;
+&lt;p&gt;于是，在周五的晚上，趁娃睡着之后，我琢磨了一下如何自动化实现。&lt;/p&gt;
+&lt;p&gt;先看一下生成后的效果吧：&lt;/p&gt;
+&lt;img src=&quot;/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/4.png&quot; class=&quot;&quot;&gt; 
+&lt;img src=&quot;/2023/04/29/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E7%83%AD%E9%97%A8%E5%88%92%E7%BA%BF/5.png&quot; class=&quot;&quot;&gt;</summary>
+    
+    
+    
+    <category term="tech" scheme="https://xiaokeai666123.github.io/categories/tech/"/>
+    
+    
+    <category term="微信读书" scheme="https://xiaokeai666123.github.io/tags/%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习究竟是在学什么</title>
+    <link href="https://xiaokeai666123.github.io/2023/03/24/%E5%AD%A6%E4%B9%A0%E7%A9%B6%E7%AB%9F%E6%98%AF%E5%9C%A8%E5%AD%A6%E4%BB%80%E4%B9%88/"/>
+    <id>https://xiaokeai666123.github.io/2023/03/24/%E5%AD%A6%E4%B9%A0%E7%A9%B6%E7%AB%9F%E6%98%AF%E5%9C%A8%E5%AD%A6%E4%BB%80%E4%B9%88/</id>
+    <published>2023-03-25T06:51:18.000Z</published>
+    <updated>2023-08-07T07:44:50.561Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2023/03/24/%E5%AD%A6%E4%B9%A0%E7%A9%B6%E7%AB%9F%E6%98%AF%E5%9C%A8%E5%AD%A6%E4%BB%80%E4%B9%88/1.jpg&quot; class=&quot;&quot;&gt; 
+&lt;p&gt;对于这样的一个宏大叙事，我不敢也确实没有能力进行一个大而全的深入讨论。只是想在一个点上，分享一些我的思考，比如后学生时代的人的学习，究竟是在学什么。&lt;/p&gt;
+&lt;p&gt;很多人把学习作为一种逃避。从学校毕业之后，没有了统一的教学大纲和课后作业。取而代之的是各种接踵而来的挑战和焦虑：房子的焦虑，职业的焦虑，择偶的焦虑。从学校刚刚毕业而在职场社会碰壁之后，身无长物又不名一文，用“学习”来缓解内心的焦虑，来暂时逃避在社会竞争失败后的空虚。这也给了樊登，罗振宇之流趁虚而入之机，贩卖一些狗皮膏药式的“知识”。&lt;/p&gt;
+&lt;p&gt;经常在朋友圈看到各种人在打卡学英语，学 Hello World 的编程。我觉得，如果接受了将近二十年的英语教育，还需要再学英语的话，可能真的不适合学英语，不应该再学了，人生又有几个二十年呢？&lt;/p&gt;
+&lt;p&gt;这些人无非就是在自己的舒适区里低水平地不断重复自己，以慰藉自己迫切需要解决实际问题的焦躁的内心。其实这样的“学习”和看剧，刷手机没有什么区别。只是羞耻感会少很多。&lt;/p&gt;
+&lt;p&gt;那么学习究竟是在学什么呢？&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="skills" scheme="https://xiaokeai666123.github.io/categories/skills/"/>
+    
+    
+    <category term="方法论" scheme="https://xiaokeai666123.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何快速搭建一个独立博客</title>
+    <link href="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/</id>
+    <published>2023-03-19T03:19:43.000Z</published>
+    <updated>2023-08-07T07:44:50.561Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/1.webp&quot; class=&quot;&quot;&gt;
+&lt;p&gt;在搭建博客之前，有这么几个考量：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持 markdown 语法，便于迁移和维护；&lt;/li&gt;
+&lt;li&gt;尽可能地减少 dependencies，不依赖于任何平台；&lt;/li&gt;
+&lt;li&gt;只有上面两个条件满足，才能满足第三个条件：&lt;strong&gt;不花钱&lt;/strong&gt;！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;那么满足这几个条件的办法，就几乎只有 &lt;code&gt;Github Pages&lt;/code&gt; + &lt;code&gt;Hexo&lt;/code&gt; 了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tech" scheme="https://xiaokeai666123.github.io/categories/tech/"/>
+    
+    
+    <category term="hexo" scheme="https://xiaokeai666123.github.io/tags/hexo/"/>
+    
+    <category term="next" scheme="https://xiaokeai666123.github.io/tags/next/"/>
+    
+    <category term="blog" scheme="https://xiaokeai666123.github.io/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://xiaokeai666123.github.io/2023/03/17/Hello-World/"/>
+    <id>https://xiaokeai666123.github.io/2023/03/17/Hello-World/</id>
+    <published>2023-03-18T06:12:45.000Z</published>
+    <updated>2023-08-07T07:44:50.551Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;img src=&quot;/2023/03/17/Hello-World/1.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="misc" scheme="https://xiaokeai666123.github.io/categories/misc/"/>
+    
+    
+    <category term="other" scheme="https://xiaokeai666123.github.io/tags/other/"/>
+    
+  </entry>
+  
+</feed>

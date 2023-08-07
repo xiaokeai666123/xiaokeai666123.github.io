@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xiaokeai666123.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在搭建博客之前，有这么几个考量：  支持 markdown 语法，便于迁移和维护； 尽可能地减少 dependencies，不依赖于任何平台； 只有上面两个条件满足，才能满足第三个条件：不花钱！  那么满足这几个条件的办法，就几乎只有 Github Pages + Hexo 了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何快速搭建一个独立博客">
+<meta property="og:url" content="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="小可爱的脚印">
+<meta property="og:description" content="在搭建博客之前，有这么几个考量：  支持 markdown 语法，便于迁移和维护； 尽可能地减少 dependencies，不依赖于任何平台； 只有上面两个条件满足，才能满足第三个条件：不花钱！  那么满足这几个条件的办法，就几乎只有 Github Pages + Hexo 了。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/1.webp">
+<meta property="og:image" content="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/2.png">
+<meta property="og:image" content="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/3.png">
+<meta property="article:published_time" content="2023-03-19T03:19:43.000Z">
+<meta property="article:modified_time" content="2023-08-07T07:44:50.561Z">
+<meta property="article:author" content="小可爱">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="next">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/1.webp">
+
+
+<link rel="canonical" href="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/","path":"2023/03/18/如何快速搭建一个独立博客/","title":"如何快速搭建一个独立博客"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>如何快速搭建一个独立博客 | 小可爱的脚印</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="小可爱的脚印" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">小可爱的脚印</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text"> 环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#node-js"><span class="nav-number">1.1.</span> <span class="nav-text"> Node js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github-repo"><span class="nav-number">1.2.</span> <span class="nav-text"> Github repo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">2.</span> <span class="nav-text"> Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-hexo-cli"><span class="nav-number">2.1.</span> <span class="nav-text"> 安装 Hexo CLI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-hexo-repo"><span class="nav-number">2.2.</span> <span class="nav-text"> 创建 Hexo repo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5-github%E7%94%A8%E4%BA%8E%E6%97%A5%E5%90%8E%E7%9A%84-deploy"><span class="nav-number">2.3.</span> <span class="nav-text"> 连接 Github，用于日后的 deploy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-hexo-deploy"><span class="nav-number">3.</span> <span class="nav-text"> 配置 Hexo deploy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next-theme"><span class="nav-number">4.</span> <span class="nav-text"> NEXT theme</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-next"><span class="nav-number">4.1.</span> <span class="nav-text"> 安装 NEXT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-next"><span class="nav-number">4.2.</span> <span class="nav-text"> 配置 NEXT</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-%E5%B8%B8%E8%A7%81-commands"><span class="nav-number">5.</span> <span class="nav-text"> Hexo 常见 Commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87"><span class="nav-number">6.</span> <span class="nav-text"> 插入图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#troubleshoot"><span class="nav-number">7.</span> <span class="nav-text"> Troubleshoot</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%8F%AF%E4%BB%A5%E8%BF%90%E8%A1%8C%E5%92%8C%E7%BC%96%E8%AF%91%E4%BD%86-remote-%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6"><span class="nav-number">7.1.</span> <span class="nav-text"> 本地可以运行和编译，但 remote 无法加载静态文件</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">小可爱</p>
+  <div class="site-description" itemprop="description">随便写写，有感而发。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xiaokeai666123.github.io/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小可爱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小可爱的脚印">
+      <meta itemprop="description" content="随便写写，有感而发。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="如何快速搭建一个独立博客 | 小可爱的脚印">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何快速搭建一个独立博客
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 03/18/2023 20:19:43" itemprop="dateCreated datePublished" datetime="2023-03-18T20:19:43-07:00">03/18/2023</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 08/07/2023 00:44:50" itemprop="dateModified" datetime="2023-08-07T00:44:50-07:00">08/07/2023</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">tech</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><img src="/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/1.webp" class="">
+<p>在搭建博客之前，有这么几个考量：</p>
+<ul>
+<li>支持 markdown 语法，便于迁移和维护；</li>
+<li>尽可能地减少 dependencies，不依赖于任何平台；</li>
+<li>只有上面两个条件满足，才能满足第三个条件：<strong>不花钱</strong>！</li>
+</ul>
+<p>那么满足这几个条件的办法，就几乎只有 <code>Github Pages</code> + <code>Hexo</code> 了。</p>
+<span id="more"></span>
+<h2 id="环境准备"><a class="markdownIt-Anchor" href="#环境准备"></a> 环境准备</h2>
+<h3 id="node-js"><a class="markdownIt-Anchor" href="#node-js"></a> Node js</h3>
+<ul>
+<li>在<a target="_blank" rel="noopener" href="https://nodejs.org/en">官网</a>安装 node  js</li>
+<li>安装完成后，check node 和 npm：</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v <span class="comment"># v19.3.0</span></span><br><span class="line">npm -v  <span class="comment"># 9.2.0</span></span><br></pre></td></tr></table></figure>
+<h3 id="github-repo"><a class="markdownIt-Anchor" href="#github-repo"></a> Github repo</h3>
+<ul>
+<li>在 Github create 一个新的 repo，<strong>注意</strong>：名字必须是 <code>&lt;username&gt;.github.io</code></li>
+<li>config repo 为 <code>Github Pages</code></li>
+</ul>
+<img src="/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/2.png" class=""> 
+<ul>
+<li>deploy 之后， <code>&lt;username&gt;.github.io</code> 检查是否可以正常访问</li>
+</ul>
+<p>到这里，一个 Github Pages 就 setup 好了。加上一个 Jekyll theme 也是一个不错的静态博客。</p>
+<h2 id="hexo"><a class="markdownIt-Anchor" href="#hexo"></a> Hexo</h2>
+<h3 id="安装-hexo-cli"><a class="markdownIt-Anchor" href="#安装-hexo-cli"></a> 安装 Hexo CLI</h3>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-cli -g</span><br></pre></td></tr></table></figure>
+<ul>
+<li>检查 Hexo 是否安装成功：<code>hexo -v</code></li>
+</ul>
+<h3 id="创建-hexo-repo"><a class="markdownIt-Anchor" href="#创建-hexo-repo"></a> 创建 Hexo repo</h3>
+<ul>
+<li>在 workspace create 一个新的 folder：<code>hexo</code></li>
+<li>初始化</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<ul>
+<li>install dependencies</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>这样在本地就可以将 Hexo 跑起来：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>访问 <code>http://localhost:4000/</code>  就可以看到博客的界面了。</p>
+<h3 id="连接-github用于日后的-deploy"><a class="markdownIt-Anchor" href="#连接-github用于日后的-deploy"></a> 连接 Github，用于日后的 deploy</h3>
+<ul>
+<li>生成 ssh 秘钥</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;&lt;git 邮箱地址&gt;&quot;</span>  </span><br></pre></td></tr></table></figure>
+<ul>
+<li>得到生成的秘钥</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<ul>
+<li>将上面的秘钥加入到 Github
+<ul>
+<li>Github -&gt; <code>settings</code> -&gt; <code>SSH and GPG keys</code></li>
+<li>新建一个 entry，随便起一个名字，比如 <code>hexo</code>，将上面的秘钥填进去</li>
+</ul>
+</li>
+<li>在本地查看是否连接到 Github</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果出现你的用户名，就说明成功连接到 Github</span></span><br></pre></td></tr></table></figure>
+<h2 id="配置-hexo-deploy"><a class="markdownIt-Anchor" href="#配置-hexo-deploy"></a> 配置 Hexo deploy</h2>
+<ul>
+<li>在 <code>_config.yml</code> config Github 的 repo 地址</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/xiaokeai666123/xiaokeai666123.github.io</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>在根目录安装一个 deploy 插件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这样每次就可以把新的文章 deploy 到远程的 Github</li>
+</ul>
+<h2 id="next-theme"><a class="markdownIt-Anchor" href="#next-theme"></a> NEXT theme</h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://theme-next.js.org/">NEXT official doc</a></p>
+</blockquote>
+<p>NEXT 可以支持更多的 features。</p>
+<h3 id="安装-next"><a class="markdownIt-Anchor" href="#安装-next"></a> 安装 NEXT</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/getting-started/">manual</a> 推荐 npm，我们也可以用 git</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<ul>
+<li>记得在 <code>_config.yml</code> 把 theme 改成 <code>next</code></li>
+</ul>
+<h3 id="配置-next"><a class="markdownIt-Anchor" href="#配置-next"></a> 配置 NEXT</h3>
+<ul>
+<li>在 theme/next 下的 <code>_config.yml</code> 可以对 NEXT 进行定制化的配置，这里不展开讨论。</li>
+</ul>
+<h2 id="hexo-常见-commands"><a class="markdownIt-Anchor" href="#hexo-常见-commands"></a> Hexo 常见 Commands</h2>
+<ul>
+<li>new post</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;&lt;title&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>三件套</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g  <span class="comment"># generate static files in public</span></span><br><span class="line">hexo s  <span class="comment"># server</span></span><br><span class="line">hexo d  <span class="comment"># deploy to Github</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>清空缓存</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<h2 id="插入图片"><a class="markdownIt-Anchor" href="#插入图片"></a> 插入图片</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders.html">开启资源文件夹</a></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img &lt;2.png&gt; %&#125; </span><br></pre></td></tr></table></figure>
+<h2 id="troubleshoot"><a class="markdownIt-Anchor" href="#troubleshoot"></a> Troubleshoot</h2>
+<h3 id="本地可以运行和编译但-remote-无法加载静态文件"><a class="markdownIt-Anchor" href="#本地可以运行和编译但-remote-无法加载静态文件"></a> 本地可以运行和编译，但 remote 无法加载静态文件</h3>
+<blockquote>
+<p>ref: <a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_60930579/article/details/126312041">link</a></p>
+</blockquote>
+<ul>
+<li>打开 F12 调试窗口，发现报错：</li>
+</ul>
+<img src="/2023/03/18/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/3.png" class=""> 
+<ul>
+<li>这说明静态文件没有被浏览器找到，parse 路径时出错。</li>
+<li>检查 hexo config 的 url 和 root，正确的配置应该是：</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://xiaokeai666123.github.io</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/next/" rel="tag"># next</a>
+              <a href="/tags/blog/" rel="tag"># blog</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/03/17/Hello-World/" rel="prev" title="Hello World">
+                  <i class="fa fa-angle-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/03/24/%E5%AD%A6%E4%B9%A0%E7%A9%B6%E7%AB%9F%E6%98%AF%E5%9C%A8%E5%AD%A6%E4%BB%80%E4%B9%88/" rel="next" title="学习究竟是在学什么">
+                  学习究竟是在学什么 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">小可爱</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
