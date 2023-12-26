@@ -6,7 +6,7 @@
   <link href="https://xiaokeai666123.github.io/atom.xml" rel="self"/>
   
   <link href="https://xiaokeai666123.github.io/"/>
-  <updated>2023-08-08T06:42:33.986Z</updated>
+  <updated>2023-12-26T08:30:27.708Z</updated>
   <id>https://xiaokeai666123.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>圣诞夜</title>
+    <link href="https://xiaokeai666123.github.io/2023/12/25/%E5%9C%A3%E8%AF%9E%E5%A4%9C/"/>
+    <id>https://xiaokeai666123.github.io/2023/12/25/%E5%9C%A3%E8%AF%9E%E5%A4%9C/</id>
+    <published>2023-12-26T07:43:07.000Z</published>
+    <updated>2023-12-26T08:30:27.708Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;距离上一篇博客得有好几个月了。&lt;/p&gt;
+&lt;p&gt;年中休完产假之后，就回归了工作。父母也在美国待了一年多之后，踏上了回国的航班。于是乎，在工作之余，我还要和老婆一起照顾我的闺女小苹果。紧张，忙碌，幸福，快乐，是贯穿一年的主旋律。这一年，少了很多自己的时间，却也多了家庭的陪伴。&lt;</summary>
+        
+      
+    
+    
+    
+    <category term="thoughts" scheme="https://xiaokeai666123.github.io/categories/thoughts/"/>
+    
+    
+    <category term="thoughts" scheme="https://xiaokeai666123.github.io/tags/thoughts/"/>
+    
+  </entry>
   
   <entry>
     <title>docker in Promox(PVE) LXC</title>
